@@ -1,0 +1,8 @@
+ParseStarterProject/src/main/res/values/strings_mine.xml
+ParseStarterProject/build/
+.gradle/
+.idea/
+build/
+gradle/
+**.iml
+local.properties
