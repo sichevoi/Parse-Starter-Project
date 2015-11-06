@@ -25,3 +25,5 @@
 -keepattributes Signature
 -dontwarn com.squareup.**
 -dontwarn okio.**
+-dontwarn android.net.SSLCertificateSocketFactory
+-dontwarn android.app.Notification
