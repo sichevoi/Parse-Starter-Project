@@ -26,7 +26,7 @@ android {
     }
     buildTypes {
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -41,7 +41,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
 
     compile 'com.parse.bolts:bolts-android:1.2.1'
-    compile 'com.parse:parse-android:1.10.3'
+    compile 'com.parse:parse-android:1.12.0'
+
+    compile ('com.facebook.android:facebook-android-sdk:4.8.2')
 }
 
 /* Uncomment if you enable ProGuard and you want to automatically upload symbols on build.

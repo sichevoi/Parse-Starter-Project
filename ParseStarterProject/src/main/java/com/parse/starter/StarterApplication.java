@@ -10,6 +10,7 @@ package com.parse.starter;
 
 import android.app.Application;
 
+import com.facebook.FacebookSdk;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseUser;
@@ -23,6 +24,8 @@ public class StarterApplication extends Application {
 
     // Enable Local Datastore.
     Parse.enableLocalDatastore(this);
+
+    FacebookSdk.sdkInitialize(this.getApplicationContext());
 
     // Add your initialization code here
     Parse.initialize(this);
