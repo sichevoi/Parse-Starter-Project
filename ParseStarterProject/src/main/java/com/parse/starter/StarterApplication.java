@@ -13,10 +13,16 @@ import android.app.Application;
 import com.facebook.FacebookSdk;
 import com.parse.Parse;
 import com.parse.ParseACL;
+import com.parse.ParseTwitterUtils;
 import com.parse.ParseUser;
 
 
 public class StarterApplication extends Application {
+
+  private static final String PARSE_CLIENT_ID = "PARSE_CLIENT_ID";
+  private static final String PARSE_CLIENT_KEY = "PARSE_CLIENT_KEY";
+  private static final String TWITTER_CONSUMER_KEY = "TWITTER_CONSUMER_KEY";
+  private static final String TWITTER_CONSUMER_SECRET = "TWITTER_CONSUMER_SECRET";
 
   @Override
   public void onCreate() {
@@ -27,8 +33,8 @@ public class StarterApplication extends Application {
 
     FacebookSdk.sdkInitialize(this.getApplicationContext());
 
-    // Add your initialization code here
-    Parse.initialize(this);
+    Parse.initialize(this, PARSE_CLIENT_ID, PARSE_CLIENT_KEY);
+    ParseTwitterUtils.initialize(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET);
 
     ParseUser.enableAutomaticUser();
     ParseACL defaultACL = new ParseACL();

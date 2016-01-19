@@ -14,9 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.ParseAnalytics;
+import com.parse.ui.ParseLoginBuilder;
 
 
 public class MainActivity extends ActionBarActivity {
+
+  private static final int LOGIN_REQUEST_CODE = 1000;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,11 @@ public class MainActivity extends ActionBarActivity {
     //noinspection SimplifiableIfStatement
     if (id == R.id.action_settings) {
       return true;
+    } else if (id == R.id.action_login) {
+      ParseLoginBuilder loginBuilder = new ParseLoginBuilder(this)
+              .setParseLoginEnabled(false)
+              .setTwitterLoginEnabled(true);
+      startActivityForResult(loginBuilder.build(), LOGIN_REQUEST_CODE);
     }
 
     return super.onOptionsItemSelected(item);
